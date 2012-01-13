@@ -1,0 +1,4 @@
+updated to 0.0.2
+- added docs to README
+- removed debug line from gaq_print()
+- fixed missing semi-colons from gaq_print()

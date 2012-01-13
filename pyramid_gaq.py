@@ -19,14 +19,19 @@ def gaq_setup( request , account_id , single_push=False ):
     """
     request.tmpl_context._gaq= {
         '__singlePush' : single_push,
+
         '_setAccount' : account_id,
+
         '_setCustomVar' : [],
+
         '_setDomainName': False,
         '_setAllowLinker': False,
+
         '_addTrans' : [],
         '_addItem' : [],
-        '_trackEvent' :[],
         '_trackTrans' : False,
+
+        '_trackEvent' :[],
     }
 
 
@@ -147,7 +152,7 @@ def gaq_print(request=None):
             ${h.gaq_print()|n}
         </head>
     
-    Notice that we turn off filtering - |n
+    Notice that you have to escape under Mako.   For more information on mako escape options - http://www.makotemplates.org/docs/filtering.html
     """
     if request is None:
        request= get_current_request()
@@ -155,7 +160,6 @@ def gaq_print(request=None):
     request= get_current_request()
     
     single_push = request.tmpl_context._gaq['__singlePush']
-    single_push= True
     single_pushes= []
 
     script= [   '<script type="text/javascript">',
@@ -201,7 +205,7 @@ def gaq_print(request=None):
             if single_push:
                 single_pushes.append(i)
             else:
-                script.append("""_gaq.push(%s)""" % i )
+                script.append("""_gaq.push(%s);""" % i )
 
     if single_push:
         single_pushes.append("""['_trackPageview']""" )
@@ -218,7 +222,7 @@ def gaq_print(request=None):
             if single_push:
                 single_pushes.append(i)
             else:
-                script.append("""_gaq.push(%s)""" % i )
+                script.append("""_gaq.push(%s);""" % i )
 
     if request.tmpl_context._gaq['_trackTrans'] :
         if single_push:
@@ -232,7 +236,7 @@ def gaq_print(request=None):
             if single_push:
                 single_pushes.append(i)
             else:
-                script.append("""_gaq.push(%s)""" % i )
+                script.append("""_gaq.push(%s);""" % i )
 
     # close the single push if we elected
     if single_push:
