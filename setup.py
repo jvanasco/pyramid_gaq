@@ -14,7 +14,7 @@ requires = [
     ]
 
 setup(name="pyramid_gaq",
-      version="0.0.2",
+      version="0.0.3",
       description="Lightweight Google Analytics support for pyramid",
       long_description=README,
       classifiers=[
@@ -24,6 +24,7 @@ setup(name="pyramid_gaq",
         "License :: OSI Approved :: MIT License",
         ],
       keywords="web pyramid",
+      py_modules=['pyramid_gaq'],
       author="Jonathan Vanasco",
       author_email="jonathan@findmeon.com",
       url="https://github.com/jvanasco/pyramid_gaq",

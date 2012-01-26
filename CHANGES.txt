@@ -1,3 +1,6 @@
+updated to 0.0.3
+- fixed setup.py script for distribution
+
 updated to 0.0.2
 - added docs to README
 - removed debug line from gaq_print()
