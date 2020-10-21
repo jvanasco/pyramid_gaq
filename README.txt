@@ -1,27 +1,40 @@
+This Package is EOL and unsupported.
+====================================
+
+Please see https://github.com/jvanasco/g_analytics_writer
+
+Outdated below
+==============
+
 IMPORTANT
+=========
 
-i've replaced this package with gaq_hub, which consists of a generalized 'hub' object, and helpers for pyramid and pylons to manage it.
+i've replaced this package with `gaq_hub`, which consists of a generalized 'hub'
+object, and helpers for Pyramid and Pylons to manage it.
 
-this package will no longer be maintained
+This package will no longer be maintained
 
-the 0.0.6 version it is largely backwards compatible with this release, with a few minor changes:
-	1. gaq_print() was renamed to gaq_as_html()
-	2. "from pyramid_gaq import *" is now "from gaq_hub.pyramid_helpers import *"
+The 0.0.6 version it is largely backwards compatible with this release,
+with a few minor changes:
+
+1. `gaq_print()` was renamed to `gaq_as_html()`
+2. `from pyramid_gaq import *` is now `from gaq_hub.pyramid_helpers import *`
 
 
-gaq_hub on github
+`gaq_hub` on Github
+
 	https://github.com/jvanasco/gaq_hub
 	
-gaq_hub on pypi
+`gaq_hub` on PYPI
+
 	http://pypi.python.org/pypi/gaq_hub
 
 
-=================
-=================
+`pyramid_gaq` gives lightweight support for Google Analytics under Pyramid
 
-pyramid_gaq gives lightweight support for Google Analytics under pyramid
-
-it creates and manages a _gaq namespace under request.tmpl_context, which can be updated in handlers and templates, and printed out -- in the correct order -- via a helper function
+it creates and manages a _gaq namespace under request.tmpl_context, which can be
+updated in handlers and templates, and printed out -- in the correct order -- via
+a helper function
 
 if you're just using _trackPageview, this package is likely overkill 
 
@@ -31,9 +44,11 @@ but if you're using any of this functionality, then its for you:
 - ecommerce tracking 
 - rolling up multiple domains into 1 reporting suite
 
-This package lets you set GA code wherever needed, and renders everything in the 'correct' order.
+This package lets you set GA code wherever needed, and renders everything in
+the 'correct' order.
 
-Every command has extensive docstrings, which also include, credit, and link to the relevant sections of the official GoogleAnalytics API docs.
+Every command has extensive docstrings, which also include, credit, and link to
+the relevant sections of the official GoogleAnalytics API docs.
 
 
 # Supported Concepts & Commands
